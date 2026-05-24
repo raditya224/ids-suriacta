@@ -32,6 +32,7 @@ The telemetry data flow from the network interface to the visualization dashboar
           │
           ▼
     [ Kibana UI ]   ──> Security Monitoring Dashboard
+```
 
 ## 🚀 Quick Deployment Reference
 
