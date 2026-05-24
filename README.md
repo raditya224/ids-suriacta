@@ -32,3 +32,28 @@ The telemetry data flow from the network interface to the visualization dashboar
           │
           ▼
     [ Kibana UI ]   ──> Security Monitoring Dashboard
+
+## 🚀 Quick Deployment Reference
+
+Follow the steps below to deploy and configure the system:
+
+### 1. Suricata Installation & Timezone Sync
+
+You can perform the installation manually using the commands below, or automate the process using the provided deployment script: `install_suricata.sh`.
+
+#### Option A: Manual Installation & Configuration
+
+First, synchronize the system timezone to ensure accurate alert timestamps, then install Suricata and its dependencies:
+
+```bash
+# Configure system timezone to WIB (UTC+07:00)
+sudo timedatectl set-timezone Asia/Jakarta
+
+# Install prerequisites and register the stable repository
+sudo apt update
+sudo apt install -y software-properties-common
+sudo add-apt-repository -y ppa:oisf/suricata-stable
+
+# Update package lists and install Suricata along with jq for JSON processing
+sudo apt update
+sudo apt install -y suricata jq
