@@ -58,3 +58,21 @@ sudo add-apt-repository -y ppa:oisf/suricata-stable
 # Update package lists and install Suricata along with jq for JSON processing
 sudo apt update
 sudo apt install -y suricata jq
+
+### 2. Elasticsearch Installation
+
+Install Elasticsearch as the centralized storage and indexing engine for Suricata telemetry logs.
+
+```bash
+# Import Elasticsearch GPG key
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+
+# Install HTTPS transport package
+sudo apt-get install -y apt-transport-https
+
+# Add official Elastic repository
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/8.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-8.x.list
+
+# Update repositories and install Elasticsearch
+sudo apt-get update && sudo apt-get install elasticsearch -y
+```
