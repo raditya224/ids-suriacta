@@ -58,6 +58,7 @@ sudo add-apt-repository -y ppa:oisf/suricata-stable
 # Update package lists and install Suricata along with jq for JSON processing
 sudo apt update
 sudo apt install -y suricata jq
+```
 
 ### 2. Elasticsearch Installation
 
